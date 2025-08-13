@@ -1,0 +1,70 @@
+<svg width="296" height="296" viewBox="0 0 296 296" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- INNER PATH -->
+  <path id="innerPath"
+        d="M33 93H127.5M154 254V93H250"
+        stroke="#CCC" stroke-width="15" stroke-linecap="round"
+        stroke-dasharray="420" stroke-dashoffset="420">
+    <!-- vẽ nét (bắt đầu 0s, hoặc sau mỗi reset) -->
+    <animate id="pathDraw"
+             attributeName="stroke-dashoffset"
+             from="420" to="0" dur="1.6s"
+             begin="0s;pathResetAnim.end"
+             fill="freeze"/>
+    <!-- đổi màu theo lúc vẽ -->
+    <animate attributeName="stroke"
+             from="#CCC" to="black" dur="1.6s"
+             begin="pathDraw.begin"
+             fill="freeze"/>
+    <!-- reset đường (đưa dashoffset về ban đầu nhanh) -->
+    <animate id="pathResetAnim"
+             attributeName="stroke-dashoffset"
+             from="0" to="420" dur="0.05s"
+             begin="outerDraw.end + 5s"
+             fill="freeze"/>
+    <animate attributeName="stroke"
+             from="black" to="#CCC" dur="0.05s"
+             begin="outerDraw.end + 5s"
+             fill="freeze"/>
+  </path>
+
+  <!-- SMALL DOT -->
+  <circle id="dot" cx="185" cy="253" r="10" fill="#FFF">
+    <!-- tô sau khi path xong -->
+    <animate id="dotFill"
+             attributeName="fill"
+             from="#FFF" to="black" dur="0.18s"
+             begin="pathDraw.end"
+             fill="freeze"/>
+    <!-- reset màu dot về xám -->
+    <animate attributeName="fill"
+             from="black" to="#CCC" dur="0.05s"
+             begin="outerDraw.end + 5s"
+             fill="freeze"/>
+  </circle>
+
+  <!-- OUTER CIRCLE -->
+  <circle id="outerCircle" cx="148" cy="148" r="146.5"
+          stroke="#CCC" stroke-width="3"
+          stroke-dasharray="920" stroke-dashoffset="920" fill="none">
+    <!-- bắt đầu sau dot hoàn thành -->
+    <animate id="outerDraw"
+             attributeName="stroke-dashoffset"
+             from="920" to="0" dur="1.8s"
+             begin="dotFill.end"
+             fill="freeze"/>
+    <animate attributeName="stroke"
+             from="#CCC" to="#888" dur="1.8s"
+             begin="dotFill.end"
+             fill="freeze"/>
+    <!-- reset vòng ngoài về trạng thái ban đầu -->
+    <animate id="outerResetAnim"
+             attributeName="stroke-dashoffset"
+             from="0" to="920" dur="0.05s"
+             begin="outerDraw.end + 5s"
+             fill="freeze"/>
+    <animate attributeName="stroke"
+             from="black" to="#CCC" dur="0.05s"
+             begin="outerDraw.end + 5s"
+             fill="freeze"/>
+  </circle>
+</svg>

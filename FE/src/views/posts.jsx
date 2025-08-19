@@ -17,7 +17,8 @@ const posts = () => {
         if (posts.status === 200) {
           const data = await posts.json();
           if (data && data.results) {
-            setPosts(data.results);
+            const stories = data.results.filter(item => (item.type === 'story' && !item.restrictedAccess));
+            setPosts(stories);
           }
         }
     } catch (error) {
@@ -32,13 +33,14 @@ const posts = () => {
 
   return (
     <div className="posts">
+      <h2>My posts from <a href="https://tinynet.net">www.tinynet.net</a></h2>
       {posts.length > 0 && (
         posts.map((post, index) => (
           <div key={index} className="post">
             <h3>{post.title}</h3>
             <small>{new Date(post.date).toLocaleDateString()}</small>
             {
-              !viewMore && <div>{`${post.text.substring(0, 100)}...`}<span onClick={() => setViewMore(true)}>View more</span></div>
+              !viewMore && <div>{`${post.text?.substring(0, 100)}...`}<span onClick={() => setViewMore(true)}>View more</span></div>
             }
             {
               viewMore && <>

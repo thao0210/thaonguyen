@@ -37,18 +37,20 @@ const posts = () => {
       {posts.length > 0 && (
         posts.map((post, index) => (
           <div key={index} className="post">
-            <h3>{post.title}</h3>
+            <h3>{post?.translation?.[0]?.title || post?.title}</h3>
             <small>{new Date(post.date).toLocaleDateString()}</small>
             {
-              !viewMore && <div>{`${post.text?.substring(0, 100)}...`}<span onClick={() => setViewMore(true)}>View more</span></div>
+              !viewMore && <div>{`${(post?.translation?.[0]?.text ?? post?.text)?.substring(0, 100)}...`}<span onClick={() => setViewMore(true)}>View more</span></div>
             }
             {
               viewMore && <>
-              <div dangerouslySetInnerHTML={{__html: post.content}} />
+              <div dangerouslySetInnerHTML={{__html: post?.translation?.[0]?.content || post?.content}} />
               <span onClick={() => setViewMore(false)}>View less</span>
               </>
             }
-          </div>)))}
+            <div><a href={`https://tinynet.net/post/${post._id}`} target="_blank">View from tinynet.net</a></div>
+          </div>)))
+      }
       {
         posts.length === 0 && <p>No posts available.</p>
       }

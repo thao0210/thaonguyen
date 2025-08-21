@@ -40,12 +40,12 @@ const posts = () => {
             <h3>{post?.translation?.[0]?.title || post?.title}</h3>
             <small>{new Date(post.date).toLocaleDateString()}</small>
             {
-              !viewMore && <div>{`${(post?.translation?.[0]?.text ?? post?.text)?.substring(0, 100)}...`}<span onClick={() => setViewMore(true)}>View more</span></div>
+              !viewMore && <div>{`${(post?.translation?.[0]?.text ?? post?.text)?.substring(0, 100)}...`}<strong onClick={() => setViewMore(true)}>View more</strong></div>
             }
             {
               viewMore && <>
               <div dangerouslySetInnerHTML={{__html: post?.translation?.[0]?.content || post?.content}} />
-              <span onClick={() => setViewMore(false)}>View less</span>
+              <strong onClick={() => setViewMore(false)}>View less</strong>
               </>
             }
             <div><a href={`https://tinynet.net/post/${post._id}`} target="_blank">View from tinynet.net</a></div>

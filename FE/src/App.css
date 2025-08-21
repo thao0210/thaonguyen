@@ -201,7 +201,7 @@ ul,li {
       font-size: 12px;
       color: #999;
     }
-    > span {
+    > span, strong {
       cursor: pointer;
       color: #da9727;
       font-size: 12px;

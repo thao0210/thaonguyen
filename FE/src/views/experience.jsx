@@ -12,7 +12,7 @@ const Experience = () => {
           </ul>
         </article>
         <article className="experience-item">
-          <h3>Senior Frontend Developer &amp; UX/UI Designer — AiDA Technology (Singapore) <small>Feb 2019 – Feb 2025</small></h3>
+          <h3>Senior Website Developer &amp; UX/UI Designer — AiDA Technology (Singapore) <small>Feb 2019 – Feb 2025</small></h3>
           <ul>
             <li><strong>Projects:</strong> CIMB Dashboard, PreAuth, PBQ Smart Claims</li>
             <li>Designed and developed customer-facing web applications, focusing on frontend (ReactJS, HTML, CSS)</li>

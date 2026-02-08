@@ -1,12 +1,12 @@
 export const siteData = {
   name: "Thao Nguyen",
-  email: "hello@thaonguyen.net",
+  email: "thao0210@gmail.com",
   tagline: "Web Development Services",
   description: "Professional web development services tailored to your business needs. From landing pages to full-stack applications, I create digital experiences that convert.",
   
   social: {
-    github: "https://github.com/yourusername",
-    linkedin: "https://linkedin.com/in/yourusername"
+    github: "https://github.com/thao0210",
+    linkedin: "https://www.linkedin.com/in/th%E1%BA%A3o-nguy%E1%BB%85n-80924b7b/"
   }
 };
 

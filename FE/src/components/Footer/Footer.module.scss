@@ -1,0 +1,24 @@
+.footer {
+  background-color: $color-gray-900;
+  color: $color-gray-400;
+  padding: $spacing-2xl 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  text-align: center;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-lg;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.text {
+  font-size: 0.875rem;
+}

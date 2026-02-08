@@ -1,0 +1,217 @@
+.pricing {
+  padding: 5rem 0;
+  background-color: $color-white;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 8rem 0;
+  }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-lg;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: $color-gray-600;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: $spacing-2xl;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.packageCard {
+  position: relative;
+  padding: $spacing-2xl;
+  border-radius: $radius-2xl;
+  transition: all $transition-normal;
+
+  &.highlighted {
+    background: $gradient-primary;
+    color: $color-white;
+    box-shadow: $shadow-2xl;
+    transform: scale(1.05);
+
+    @media (min-width: $breakpoint-md) {
+      transform: scale(1.1);
+    }
+  }
+
+  &:not(.highlighted) {
+    background-color: $color-gray-50;
+    border: 2px solid $color-gray-200;
+
+    &:hover {
+      border-color: $color-gray-900;
+    }
+  }
+}
+
+.badge {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3B82F6;
+  color: $color-white;
+  padding: 0.25rem $spacing-md;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.packageHeader {
+  margin-bottom: $spacing-2xl;
+}
+
+.packageName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: $spacing-sm;
+
+  .highlighted & {
+    color: $color-white;
+  }
+
+  &:not(.highlighted *) {
+    color: $color-gray-900;
+  }
+}
+
+.packageDescription {
+  font-size: 0.875rem;
+  margin-bottom: $spacing-md;
+
+  .highlighted & {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &:not(.highlighted *) {
+    color: $color-gray-600;
+  }
+}
+
+.priceWrapper {
+  display: flex;
+  align-items: baseline;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+
+  .highlighted & {
+    color: $color-white;
+  }
+
+  &:not(.highlighted *) {
+    color: $color-gray-900;
+  }
+}
+
+.priceSuffix {
+  margin-left: $spacing-sm;
+
+  .highlighted & {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &:not(.highlighted *) {
+    color: $color-gray-600;
+  }
+}
+
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-bottom: $spacing-2xl;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+
+  svg {
+    flex-shrink: 0;
+    margin-right: $spacing-sm;
+    margin-top: 0.125rem;
+  }
+
+  .highlighted & {
+    color: rgba(255, 255, 255, 0.9);
+
+    svg {
+      color: rgba(147, 197, 253, 1);
+    }
+  }
+
+  &:not(.highlighted *) {
+    color: $color-gray-700;
+
+    svg {
+      color: $color-secondary;
+    }
+  }
+}
+
+.ctaButton {
+  display: block;
+  text-align: center;
+  padding: 0.75rem $spacing-lg;
+  border-radius: $radius-lg;
+  font-weight: 500;
+  transition: all $transition-fast;
+
+  &.highlighted {
+    background-color: $color-white;
+    color: $color-gray-900;
+
+    &:hover {
+      background-color: $color-gray-100;
+    }
+  }
+
+  &:not(.highlighted) {
+    background-color: $color-gray-900;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-gray-800;
+    }
+  }
+}

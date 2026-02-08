@@ -1,0 +1,114 @@
+.services {
+  padding: 5rem 0;
+  background-color: $color-white;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 8rem 0;
+  }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-lg;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: $color-gray-600;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: $spacing-2xl;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  padding: $spacing-2xl;
+  border-radius: $radius-2xl;
+  border: 2px solid $color-gray-200;
+  transition: all $transition-normal;
+
+  &:hover {
+    border-color: $color-gray-900;
+    box-shadow: $shadow-xl;
+
+    .icon {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  background: $gradient-primary;
+  border-radius: $radius-xl;
+  margin-bottom: $spacing-lg;
+  transition: transform $transition-normal;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin-bottom: $spacing-sm;
+}
+
+.cardDescription {
+  color: $color-gray-600;
+  margin-bottom: $spacing-lg;
+}
+
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  color: $color-gray-700;
+
+  svg {
+    color: $color-secondary;
+    margin-right: $spacing-sm;
+    flex-shrink: 0;
+  }
+
+  span {
+    font-size: 0.875rem;
+  }
+}

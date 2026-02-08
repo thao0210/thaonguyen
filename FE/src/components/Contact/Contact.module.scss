@@ -1,0 +1,87 @@
+.contact {
+  padding: 5rem 0;
+  background: $gradient-primary;
+  color: $color-white;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 8rem 0;
+  }
+}
+
+.container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  text-align: center;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-lg;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: $spacing-lg;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 3rem;
+  }
+}
+
+.description {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+}
+
+.emailWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-md;
+  margin-bottom: $spacing-3xl;
+
+  @media (min-width: $breakpoint-sm) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.emailButton {
+  display: inline-flex;
+  align-items: center;
+  background-color: $color-white;
+  color: $color-gray-900;
+  padding: $spacing-md $spacing-2xl;
+  border-radius: $radius-lg;
+  font-weight: 500;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $color-gray-100;
+  }
+
+  svg {
+    margin-right: $spacing-sm;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-lg;
+}
+
+.socialLink {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-white;
+  }
+}

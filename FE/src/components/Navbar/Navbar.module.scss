@@ -1,0 +1,150 @@
+.navbar {
+  background-color: transparent;
+  color: $color-white;
+  
+  .logoText,
+  .navLink {
+    color: $color-white;
+  }
+  position: fixed;
+  width: 100%;
+  z-index: $z-fixed;
+  transition: all $transition-normal;
+
+  &.scrolled {
+    background-color: $color-white;
+    box-shadow: $shadow-lg;
+    .logoText,
+    .navLink {
+      color: $color-gray-900;
+    }
+  }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-lg;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.logoIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: $gradient-primary;
+  border-radius: $radius-lg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    color: $color-white;
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+//   background: $gradient-accent;
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   background-clip: text;
+}
+
+.navMenu {
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2xl;
+  }
+}
+
+.navLink {
+  color: $color-gray-700;
+  font-weight: 500;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: #3B82F6;
+  }
+}
+
+.ctaButton {
+  background-color: $color-gray-900;
+  color: $color-white;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-lg;
+  font-weight: 500;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: $color-gray-800;
+  }
+}
+
+.menuButton {
+  display: block;
+
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  background-color: $color-white;
+  border-top: 1px solid $color-gray-200;
+
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.mobileMenuContent {
+  padding: $spacing-lg $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.mobileLink {
+  display: block;
+  color: $color-gray-700;
+  font-weight: 500;
+
+  &:hover {
+    color: $color-gray-900;
+  }
+}
+
+.mobileCta {
+  display: block;
+  background-color: $color-gray-900;
+  color: $color-white;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-lg;
+  text-align: center;
+}

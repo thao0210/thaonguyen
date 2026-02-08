@@ -1,0 +1,122 @@
+.portfolio {
+  padding: 5rem 0;
+  background-color: $color-gray-50;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 8rem 0;
+  }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-lg;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: $color-gray-600;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: $spacing-2xl;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.projectCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: $radius-2xl;
+  background-color: $color-white;
+  box-shadow: $shadow-lg;
+  transition: all $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-2xl;
+
+    .projectImage img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.projectImage {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $transition-slow;
+  }
+}
+
+.projectContent {
+  padding: $spacing-lg;
+}
+
+.projectCategory {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $color-secondary;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin-top: $spacing-sm;
+  margin-bottom: $spacing-sm;
+}
+
+.projectDescription {
+  color: $color-gray-600;
+  margin-bottom: $spacing-md;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  color: $color-gray-900;
+  font-weight: 500;
+  transition: gap $transition-fast;
+
+  &:hover {
+    gap: $spacing-sm;
+  }
+
+  svg {
+    margin-left: 0.25rem;
+  }
+}

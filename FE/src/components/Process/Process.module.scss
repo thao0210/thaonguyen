@@ -1,0 +1,104 @@
+.process {
+  padding: 5rem 0;
+  background-color: $color-gray-50;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 8rem 0;
+  }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-lg;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: $color-gray-600;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: $spacing-lg;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.stepWrapper {
+  position: relative;
+}
+
+.stepCard {
+  background-color: $color-white;
+  padding: $spacing-lg;
+  border-radius: $radius-2xl;
+  border: 2px solid $color-gray-200;
+  transition: all $transition-normal;
+
+  &:hover {
+    border-color: $color-gray-900;
+    box-shadow: $shadow-lg;
+  }
+}
+
+.stepNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $color-gray-200;
+  margin-bottom: $spacing-md;
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin-bottom: $spacing-sm;
+}
+
+.stepDescription {
+  font-size: 0.875rem;
+  color: $color-gray-600;
+}
+
+.arrow {
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -0.75rem;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: $color-gray-400;
+  }
+}

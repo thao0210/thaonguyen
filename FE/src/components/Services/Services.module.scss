@@ -49,6 +49,10 @@
   gap: $spacing-2xl;
 
   @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -58,24 +62,55 @@
   border-radius: $radius-2xl;
   border: 2px solid $color-gray-200;
   transition: all $transition-normal;
+  background: $color-white;
 
   &:hover {
     border-color: $color-gray-900;
     box-shadow: $shadow-xl;
+    transform: translateY(-4px);
 
-    .icon {
-      transform: scale(1.1);
+    .iconWrapper {
+      transform: scale(1.1) rotate(5deg);
     }
   }
 }
 
-.icon {
-  width: 3rem;
-  height: 3rem;
-  background: $gradient-primary;
+// Icon wrapper with gradient background
+.iconWrapper {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #3B82F6 0%, #1E3A8A 100%);
   border-radius: $radius-xl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: $spacing-lg;
   transition: transform $transition-normal;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  position: relative;
+  color:$color-white;
+
+  // Subtle glow effect
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #60A5FA, #3B82F6);
+    border-radius: $radius-xl;
+    opacity: 0;
+    transition: opacity $transition-normal;
+    z-index: -1;
+  }
+
+  .card:hover &::before {
+    opacity: 0.3;
+  }
+}
+
+.icon {
+  font-size: 2rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .cardTitle {
@@ -88,6 +123,7 @@
 .cardDescription {
   color: $color-gray-600;
   margin-bottom: $spacing-lg;
+  line-height: 1.6;
 }
 
 .features {

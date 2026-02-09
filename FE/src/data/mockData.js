@@ -1,12 +1,14 @@
 export const siteData = {
   name: "Thao Nguyen",
   email: "thao0210@gmail.com",
+  phone: "+84 909 800 210", // Update with your real number
   tagline: "Web Development Services",
   description: "Professional web development services tailored to your business needs. From landing pages to full-stack applications, I create digital experiences that convert.",
   
   social: {
-    github: "https://github.com/thao0210",
-    linkedin: "https://www.linkedin.com/in/th%E1%BA%A3o-nguy%E1%BB%85n-80924b7b/"
+    linkedin: "https://www.linkedin.com/in/th%E1%BA%A3o-nguy%E1%BB%85n-80924b7b/", // Update with your LinkedIn
+    zalo: "https://zalo.me/84909800210", // Update with your Zalo
+    whatsapp: "https://wa.me/84909800210" // Update with your WhatsApp
   }
 };
 

@@ -6,6 +6,7 @@ import Pricing from './components/Pricing/Pricing';
 import Process from './components/Process/Process';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <Services />
       <Portfolio />
+      <About />
       <Pricing />
       <Process />
       <Contact />

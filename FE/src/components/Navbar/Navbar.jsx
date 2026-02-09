@@ -29,6 +29,7 @@ const Navbar = () => {
           <div className={styles.navMenu}>
             <a href="#services" className={styles.navLink}>Services</a>
             <a href="#portfolio" className={styles.navLink}>Portfolio</a>
+            <a href="#about" className={styles.navLink}>About</a>
             <a href="#pricing" className={styles.navLink}>Pricing</a>
             <a href="#process" className={styles.navLink}>Process</a>
             <a href="#contact" className={styles.ctaButton}>Get Started</a>
@@ -53,6 +54,9 @@ const Navbar = () => {
             </a>
             <a href="#portfolio" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
               Portfolio
+            </a>
+            <a href="#about" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
+              About
             </a>
             <a href="#pricing" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
               Pricing

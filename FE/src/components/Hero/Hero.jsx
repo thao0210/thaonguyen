@@ -1,17 +1,25 @@
 import { ChevronRight } from 'lucide-react';
 import { siteData } from '../../data/mockData';
 import styles from './Hero.module.scss';
+import { 
+  Zap, 
+  Smartphone, 
+  Rocket, 
+  Shield, 
+  Sparkles, 
+  MessageCircle,
+} from 'lucide-react';
 
 const Hero = () => {
   // Benefits & Features (customer-friendly language)
   const features = [
-    { text: 'Fast Loading', icon: '⚡' },
-    { text: 'Mobile Friendly', icon: '📱' },
-    { text: 'SEO Optimized', icon: '🚀' },
-    { text: 'Secure', icon: '🔒' },
-    { text: 'Modern Design', icon: '✨' },
-    { text: '24/7 Support', icon: '💬' },
-  ];
+  { text: 'Fast Loading', icon: <Zap className="w-6 h-6" /> },
+  { text: 'Mobile Friendly', icon: <Smartphone className="w-6 h-6" /> },
+  { text: 'SEO Optimized', icon: <Rocket className="w-6 h-6" /> },
+  { text: 'Secure', icon: <Shield className="w-6 h-6" /> },
+  { text: 'Modern Design', icon: <Sparkles className="w-6 h-6" /> },
+  { text: '24/7 Support', icon: <MessageCircle className="w-6 h-6" /> },
+];
 
   return (
     <section className={styles.hero}>

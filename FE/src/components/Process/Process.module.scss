@@ -55,6 +55,8 @@
 
 .stepWrapper {
   position: relative;
+  display: flex;
+  align-items: stretch;
 }
 
 .stepCard {
@@ -63,10 +65,15 @@
   border-radius: $radius-2xl;
   border: 2px solid $color-gray-200;
   transition: all $transition-normal;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 200px; // Equal height for all cards
 
   &:hover {
     border-color: $color-gray-900;
     box-shadow: $shadow-lg;
+    transform: translateY(-4px);
   }
 }
 
@@ -75,6 +82,7 @@
   font-weight: 700;
   color: $color-gray-200;
   margin-bottom: $spacing-md;
+  line-height: 1;
 }
 
 .stepTitle {
@@ -87,6 +95,8 @@
 .stepDescription {
   font-size: 0.875rem;
   color: $color-gray-600;
+  line-height: 1.6;
+  flex: 1; // Push content to fill space
 }
 
 .arrow {
@@ -96,7 +106,7 @@
     display: block;
     position: absolute;
     top: 50%;
-    right: -0.75rem;
+    right: -1.5rem; // Moved outside the card
     transform: translateY(-50%);
     z-index: 10;
     color: $color-gray-400;

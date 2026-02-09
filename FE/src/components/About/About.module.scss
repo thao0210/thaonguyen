@@ -1,0 +1,148 @@
+.about {
+  padding: 5rem 0;
+//   background-color: $color-white;
+background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+border-top: 2px solid $color-gray-200;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 8rem 0;
+  }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-lg;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: $spacing-3xl;
+  align-items: center;
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+// Image Section
+.imageWrapper {
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: $radius-2xl;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.imageBorder {
+  position: absolute;
+  inset: -12px;
+  background: $gradient-accent;
+  border-radius: $radius-2xl;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+// Content Section
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.badge {
+  display: inline-block;
+  background: $gradient-accent;
+  color: $color-white;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  line-height: 1.2;
+
+  @media (min-width: $breakpoint-lg) {
+    font-size: 3rem;
+  }
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  p {
+    font-size: 1.05rem;
+    color: $color-gray-600;
+    line-height: 1.7;
+    margin: 0;
+
+    strong {
+      color: $color-gray-900;
+      font-weight: 600;
+    }
+  }
+}
+
+// Stats Section
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
+  margin-top: $spacing-lg;
+  padding-top: $spacing-xl;
+  border-top: 2px solid $color-gray-200;
+}
+
+.stat {
+  text-align: center;
+
+  @media (min-width: $breakpoint-md) {
+    text-align: left;
+  }
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: $gradient-accent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: $spacing-sm;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: $color-gray-600;
+  font-weight: 500;
+}

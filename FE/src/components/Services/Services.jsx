@@ -1,8 +1,77 @@
 import { Check } from 'lucide-react';
-import { services } from '../../data/mockData';
 import styles from './Services.module.scss';
+import { 
+  Palette,
+  Settings,
+  ShoppingCart,
+  RefreshCw,
+  Briefcase
+} from 'lucide-react';
 
 const Services = () => {
+  const services = [
+  {
+    id: 1,
+    icon: <Palette className="w-8 h-8" />,
+    title: 'Landing Page Design',
+    description: 'Conversion-focused landing pages that turn visitors into customers',
+    features: [
+      'Responsive Design',
+      'SEO Optimized',
+      'Fast Loading',
+      'Analytics Integration'
+    ]
+  },
+  {
+    id: 2,
+    icon: <Settings className="w-8 h-8" />,
+    title: 'Web Application',
+    description: 'Full-stack web applications with modern technologies',
+    features: [
+      'React/Next.js',
+      'API Integration',
+      'Database Design',
+      'Authentication'
+    ]
+  },
+  {
+    id: 3,
+    icon: <ShoppingCart className="w-8 h-8" />,
+    title: 'E-Commerce Solution',
+    description: 'Complete online store setup with payment integration',
+    features: [
+      'Shopping Cart',
+      'Payment Gateway',
+      'Inventory Management',
+      'Admin Dashboard'
+    ]
+  },
+  {
+    id: 4,
+    icon: <RefreshCw className="w-8 h-8" />,
+    title: 'Website Redesign',
+    description: 'Refresh and modernize your existing website',
+    features: [
+      'UI/UX Improvements',
+      'Performance Optimization',
+      'Mobile Optimization',
+      'Content Migration'
+    ]
+  },
+  {
+    id: 5,
+    icon: <Briefcase className="w-8 h-8" />,
+    title: 'Freelance Services',
+    description: 'Flexible hourly work for various web development tasks',
+    features: [
+      'Bug Fixes & Updates',
+      'Feature Development',
+      'Code Review',
+      'Technical Consulting'
+    ]
+  }
+];
+
   return (
     <section id="services" className={styles.services}>
       <div className={styles.container}>
@@ -16,7 +85,9 @@ const Services = () => {
         <div className={styles.grid}>
           {services.map((service) => (
             <div key={service.id} className={styles.card}>
-              <div className={styles.icon}></div>
+              <div className={styles.iconWrapper}>
+                <span className={styles.icon}>{service.icon}</span>
+              </div>
               <h3 className={styles.cardTitle}>{service.title}</h3>
               <p className={styles.cardDescription}>{service.description}</p>
               <ul className={styles.features}>

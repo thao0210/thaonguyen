@@ -1,8 +1,73 @@
 import { Check } from 'lucide-react';
-import { packages } from '../../data/mockData';
 import styles from './Pricing.module.scss';
 
 const Pricing = () => {
+  const packages = [
+    {
+      id: 1,
+      name: 'Starter',
+      price: '$1,200+',
+      description: 'Perfect for small businesses and startups',
+      features: [
+        'Up to 5 pages',
+        'Responsive design',
+        'Basic SEO setup',
+        'Contact form integration',
+        '1 month support',
+        '2 revision rounds'
+      ],
+      highlighted: false
+    },
+    {
+      id: 2,
+      name: 'Website Redesign',
+      price: '$200+',
+      description: 'Refresh your existing website',
+      features: [
+        'Logo improvement',
+        'UI/UX redesign',
+        'Responsive optimization',
+        'Export to HTML',
+        'Online deployment',
+        '2 weeks support'
+      ],
+      highlighted: false
+    },
+    {
+      id: 3,
+      name: 'Freelance Hourly',
+      price: '$20-30/hr',
+      description: 'Flexible hourly rate based on complexity',
+      features: [
+        'Bug fixes & updates',
+        'Feature development',
+        'Code review',
+        'Technical consulting',
+        'Flexible schedule',
+        'Pay as you go'
+      ],
+      highlighted: false,
+      priceNote: 'Based on task difficulty'
+    },
+    {
+      id: 4,
+      name: 'Professional',
+      price: '$2,500+',
+      description: 'Ideal for growing businesses',
+      features: [
+        'Up to 15 pages',
+        'Advanced animations',
+        'CMS integration',
+        'API development',
+        '3 months support',
+        'Unlimited revisions',
+        'Performance optimization',
+        'Analytics dashboard'
+      ],
+      highlighted: true
+    }
+  ];
+
   return (
     <section id="pricing" className={styles.pricing}>
       <div className={styles.container}>
@@ -28,10 +93,10 @@ const Pricing = () => {
                 <p className={styles.packageDescription}>{pkg.description}</p>
                 <div className={styles.priceWrapper}>
                   <span className={styles.price}>{pkg.price}</span>
-                  {pkg.price !== 'Custom' && (
-                    <span className={styles.priceSuffix}>/project</span>
-                  )}
                 </div>
+                {pkg.priceNote && (
+                  <p className={styles.priceNote}>{pkg.priceNote}</p>
+                )}
               </div>
 
               <ul className={styles.features}>

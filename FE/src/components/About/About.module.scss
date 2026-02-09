@@ -74,7 +74,7 @@ border-top: 2px solid $color-gray-200;
 
 .badge {
   display: inline-block;
-  background: $gradient-accent;
+  background: linear-gradient(135deg, #8B5CF6 0%, #1049a3 100%);
   color: $color-white;
   padding: $spacing-sm $spacing-md;
   border-radius: 9999px;

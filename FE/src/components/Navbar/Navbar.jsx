@@ -19,10 +19,7 @@ const Navbar = () => {
       <div className={styles.container}>
         <div className={styles.navContent}>
           <div className={styles.logo}>
-            {/* <div className={styles.logoIcon}>
-              <span>T</span>
-            </div> */}
-            <img src='/logo.svg' alt="Thao Nguyen Logo" className={styles.logoIcon} />
+            <img src={scrolled ? '/logo.svg' : '/logo-light.svg'} alt="Thao Nguyen Logo" className={styles.logoIcon} />
             <span className={styles.logoText}>Thao Nguyen</span>
           </div>
 

@@ -1,15 +1,29 @@
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
 .hero {
   position: relative;
   padding-top: 8rem;
   padding-bottom: 8rem;
   
   // Dark gradient background - creates strong contrast
-  background: linear-gradient(135deg, 
-    #0F172A 0%,     // Very dark blue
-    #1E3A8A 50%,    // Deep blue
-    #1E293B 100%    // Dark slate
-  );
-  
+//   background: linear-gradient(135deg, 
+//     #0F172A 0%,     // Very dark blue
+//     #1E3A8A 50%,    // Deep blue
+//     #1E293B 100%    // Dark slate
+//   );
+background: 
+  radial-gradient(at 10% 20%, #8B5CF6 0px, transparent 50%),
+  radial-gradient(at 90% 80%, #EC4899 0px, transparent 50%),
+  radial-gradient(at 50% 50%, #3B82F6 0px, transparent 50%),
+  linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%);
+
+//   background-size: 200% 200%;
+// animation: gradientShift 15s ease infinite;
+
+
   overflow: hidden;
 
   @media (min-width: $breakpoint-lg) {
@@ -79,10 +93,10 @@
 
 .badge {
   display: inline-block;
-  background: rgba(59, 130, 246, 0.2);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  color: #93C5FD;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: $color-white;
   padding: $spacing-sm $spacing-md;
   border-radius: 9999px;
   font-size: 0.875rem;
@@ -102,7 +116,7 @@
 }
 
 .highlight {
-  background: linear-gradient(135deg, #60A5FA, #93C5FD);
+  background: #c8b5ff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -129,8 +143,9 @@
 }
 
 .primaryButton {
-  background-color: #3B82F6;
+//   background-color: #3B82F6;
 //   background-color: #f67d3b;
+  background: linear-gradient(135deg, #9372f4 0%, #3B82F6 100%);
   color: $color-white;
   padding: $spacing-md $spacing-2xl;
   border-radius: $radius-lg;
@@ -322,7 +337,7 @@
 .featureBadge {
   position: absolute;
 //   background: rgba(213, 235, 255, 0.95);
-  background: #93C5FD;
+  background: #c8b5ff;
     // background: #aed3ff;
   color: $color-white;
   backdrop-filter: blur(10px);
@@ -349,7 +364,7 @@
     box-shadow: 
       0 12px 24px rgba(0, 0, 0, 0.2),
       0 0 0 1px rgba(59, 130, 246, 0.4);
-    background: #0d216b;
+    background: #4a25b7;
     color: $color-white;
   }
 

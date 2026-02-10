@@ -1,16 +1,53 @@
+import { useState, useEffect } from 'react';
 import { Check } from 'lucide-react';
 import styles from './Pricing.module.scss';
 
 const Pricing = () => {
+  // Countdown timer - 3 days from now
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    // Set target date to 3 days from now
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 3);
+    
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = targetDate.getTime() - now;
+
+      if (distance > 0) {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000)
+        });
+      }
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const packages = [
     {
       id: 1,
       name: 'Starter',
-      price: '$1,200+',
+      originalPrice: '$1,200',
+      price: '$790',
+      onSale: true,
       description: 'Perfect for small businesses and startups',
       features: [
         'Up to 5 pages',
         'Responsive design',
+        'FREE Logo Design ($200 value)',
         'Basic SEO setup',
         'Contact form integration',
         '1 month support',
@@ -24,7 +61,7 @@ const Pricing = () => {
       price: '$200+',
       description: 'Refresh your existing website',
       features: [
-        'Logo improvement',
+        'FREE Logo Design ($200 value)',
         'UI/UX redesign',
         'Responsive optimization',
         'Export to HTML',
@@ -36,8 +73,8 @@ const Pricing = () => {
     {
       id: 3,
       name: 'Freelance Hourly',
-      price: '$20-30/hr',
-      description: 'Flexible hourly rate based on complexity',
+      price: '$25/hr',
+      description: 'Flexible hourly work for development tasks',
       features: [
         'Bug fixes & updates',
         'Feature development',
@@ -46,8 +83,7 @@ const Pricing = () => {
         'Flexible schedule',
         'Pay as you go'
       ],
-      highlighted: false,
-      priceNote: 'Based on task difficulty'
+      highlighted: false
     },
     {
       id: 4,
@@ -56,6 +92,7 @@ const Pricing = () => {
       description: 'Ideal for growing businesses',
       features: [
         'Up to 15 pages',
+        'FREE Logo Design ($200 value)',
         'Advanced animations',
         'CMS integration',
         'API development',
@@ -82,18 +119,55 @@ const Pricing = () => {
           {packages.map((pkg) => (
             <div 
               key={pkg.id} 
-              className={`${styles.packageCard} ${pkg.highlighted ? styles.highlighted : ''}`}
+              className={`${styles.packageCard} ${pkg.highlighted ? styles.highlighted : ''} ${pkg.onSale ? styles.onSale : ''}`}
             >
               {pkg.highlighted && (
                 <div className={styles.badge}>Most Popular</div>
               )}
 
+              {pkg.onSale && (
+                <div className={styles.saleBadge}>Limited Offer!</div>
+              )}
+
               <div className={styles.packageHeader}>
                 <h3 className={styles.packageName}>{pkg.name}</h3>
                 <p className={styles.packageDescription}>{pkg.description}</p>
+                
                 <div className={styles.priceWrapper}>
+                  {pkg.onSale && (
+                    <span className={styles.originalPrice}>{pkg.originalPrice}</span>
+                  )}
                   <span className={styles.price}>{pkg.price}</span>
+                  {pkg.onSale && (
+                    <span className={styles.savings}>Save ${(1200 - 790)}</span>
+                  )}
                 </div>
+                
+                {/* Countdown Timer - Only for Starter */}
+                {pkg.onSale && (
+                  <div className={styles.countdown}>
+                    <div className={styles.timeUnit}>
+                      <span className={styles.timeValue}>{String(timeLeft.days).padStart(2, '0')}</span>
+                      <span className={styles.timeLabel}>Days</span>
+                    </div>
+                    <span className={styles.timeSeparator}>:</span>
+                    <div className={styles.timeUnit}>
+                      <span className={styles.timeValue}>{String(timeLeft.hours).padStart(2, '0')}</span>
+                      <span className={styles.timeLabel}>Hrs</span>
+                    </div>
+                    <span className={styles.timeSeparator}>:</span>
+                    <div className={styles.timeUnit}>
+                      <span className={styles.timeValue}>{String(timeLeft.minutes).padStart(2, '0')}</span>
+                      <span className={styles.timeLabel}>Min</span>
+                    </div>
+                    <span className={styles.timeSeparator}>:</span>
+                    <div className={styles.timeUnit}>
+                      <span className={styles.timeValue}>{String(timeLeft.seconds).padStart(2, '0')}</span>
+                      <span className={styles.timeLabel}>Sec</span>
+                    </div>
+                  </div>
+                )}
+                
                 {pkg.priceNote && (
                   <p className={styles.priceNote}>{pkg.priceNote}</p>
                 )}

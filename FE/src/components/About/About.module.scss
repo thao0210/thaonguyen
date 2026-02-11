@@ -4,6 +4,11 @@
 // background: linear-gradient(135deg, #f4ecff 0%, #fff0f6 100%);
 background: #f6f0fc;
 border-top: 2px solid #e4d1fa;
+border-bottom: 2px solid #e4d1fa;
+
+   @media (min-width: $breakpoint-lg) {
+    padding: 8rem 0;
+  }
 
   @media (min-width: $breakpoint-lg) {
     padding: 8rem 0;

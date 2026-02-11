@@ -1,0 +1,248 @@
+.projectDetail {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2xl;
+}
+
+// Main Image
+.imageWrapper {
+  width: 100%;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  background: $color-gray-100;
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+// Info Grid
+.infoGrid {
+  display: grid;
+  gap: $spacing-lg;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  padding: $spacing-md;
+  background: $color-gray-50;
+  border-radius: $radius-lg;
+
+  svg {
+    color: $color-gray-600;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+}
+
+.infoLabel {
+  font-size: 0.75rem;
+  color: $color-gray-600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.125rem;
+}
+
+.infoValue {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $color-gray-900;
+}
+
+// Sections
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin: 0;
+}
+
+.description {
+  font-size: 1rem;
+  color: $color-gray-600;
+  line-height: 1.7;
+  margin: 0;
+}
+
+// Tech Stack
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.techBadge {
+  display: inline-block;
+  padding: $spacing-sm $spacing-md;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #6D28D9;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
+    transform: translateY(-2px);
+  }
+}
+
+// Features List
+.featureList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: $spacing-lg;
+    color: $color-gray-700;
+    line-height: 1.6;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #8B5CF6;
+      font-weight: 700;
+    }
+  }
+}
+
+// Testimonial
+.testimonial {
+  background: linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.05), 
+    rgba(59, 130, 246, 0.05)
+  );
+  padding: $spacing-xl;
+  border-radius: $radius-xl;
+  border-left: 4px solid #8B5CF6;
+}
+
+.quote {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: $color-gray-700;
+  line-height: 1.7;
+  margin: 0 0 $spacing-md 0;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+
+  strong {
+    color: $color-gray-900;
+    font-weight: 600;
+  }
+
+  span {
+    font-size: 0.875rem;
+    color: $color-gray-600;
+  }
+}
+
+// Gallery
+.gallery {
+  display: grid;
+  gap: $spacing-md;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.galleryImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: $radius-lg;
+  transition: transform $transition-normal;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Actions
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  padding-top: $spacing-lg;
+  border-top: 1px solid $color-gray-200;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  background-color: $color-gray-900;
+  color: $color-white;
+  padding: $spacing-sm $spacing-xl;
+  border-radius: $radius-lg;
+  font-weight: 600;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: $color-gray-800;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  border: 2px solid $color-gray-900;
+  color: $color-gray-900;
+  padding: $spacing-sm $spacing-xl;
+  border-radius: $radius-lg;
+  font-weight: 600;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: $color-gray-900;
+    color: $color-white;
+    transform: translateY(-2px);
+  }
+}
+
+// Mobile responsive
+@media (max-width: $breakpoint-sm) {
+  .projectDetail {
+    gap: $spacing-xl;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+
+    .primaryButton,
+    .secondaryButton {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

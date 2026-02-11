@@ -1,0 +1,193 @@
+.categoryProjects {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2xl;
+}
+
+// Category Header
+.categoryHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  padding-bottom: $spacing-xl;
+  border-bottom: 2px solid $color-gray-200;
+}
+
+.categoryIcon {
+  font-size: 3rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.categoryTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin-bottom: $spacing-sm;
+}
+
+.categoryDescription {
+  font-size: 1rem;
+  color: $color-gray-600;
+  line-height: 1.6;
+}
+
+// Projects Grid
+.projectsGrid {
+  display: grid;
+  gap: $spacing-xl;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.projectCard {
+  background: $color-white;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  transition: all $transition-normal;
+  cursor: pointer;
+  border: 2px solid $color-gray-100;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
+
+    .overlay {
+      opacity: 1;
+    }
+
+    .projectImage {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.1), 
+    rgba(59, 130, 246, 0.1)
+  );
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform $transition-normal;
+}
+
+.statusBadge {
+  position: absolute;
+  top: $spacing-md;
+  right: $spacing-md;
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: $color-white;
+  padding: 0.25rem $spacing-sm;
+  border-radius: $radius-md;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.8) 0%,
+    rgba(15, 23, 42, 0.4) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity $transition-normal;
+}
+
+.viewButton {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  background-color: $color-white;
+  color: $color-gray-900;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-md;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: #8B5CF6;
+    color: $color-white;
+    transform: translateY(-2px);
+  }
+}
+
+.projectInfo {
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.projectTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: $color-gray-900;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.projectDescription {
+  font-size: 0.875rem;
+  color: $color-gray-600;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: $spacing-sm;
+}
+
+.techBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6D28D9;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: $radius-sm;
+}
+
+@media (max-width: $breakpoint-sm) {
+  .categoryHeader {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .categoryIcon {
+    font-size: 2.5rem;
+  }
+
+  .categoryTitle {
+    font-size: 1.5rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+}

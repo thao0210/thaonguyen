@@ -1,6 +1,65 @@
 .portfolio {
   padding: 5rem 0;
-  background-color: $color-gray-50;
+//   background-color: $color-gray-50;
+// background: 
+//     linear-gradient(135deg, #faf5ff 25%, transparent 25%),
+//     linear-gradient(225deg, #faf5ff 25%, transparent 25%),
+//     linear-gradient(45deg, #eff6ff 25%, transparent 25%),
+//     linear-gradient(315deg, #eff6ff 25%, #ffffff 25%);
+//     background-size: 80px 80px;
+//   background-position: 40px 0, 40px 0, 0 0, 0 0;
+        background: #f6f2f2;
+        position: relative;
+    &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle, #8b5cf6 3px, transparent 3px),
+      radial-gradient(circle, #ec4899 2px, transparent 2px),
+      radial-gradient(circle, #3b82f6 1.5px, transparent 1.5px);
+    background-size: 60px 60px, 40px 40px, 80px 80px;
+    background-position: 0 0, 20px 20px, 30px 40px;
+    opacity: 0.2;
+  }
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     inset: 0;
+//     background-image: 
+//       radial-gradient(circle at center, #8b5cf6 0%, #8b5cf6 30%, transparent 30%),
+//       radial-gradient(circle at center, rgba(139, 92, 246, 0.3) 0%, rgba(139, 92, 246, 0.3) 35%, transparent 35%);
+//     background-size: 8px 8px, 8px 8px;
+//     background-position: 0 0, 1px 1px;
+//     opacity: 0.15;
+//   }
+  
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     inset: 0;
+//     background-image: 
+//       radial-gradient(circle at center, #ec4899 0%, #ec4899 30%, transparent 30%),
+//       radial-gradient(circle at center, rgba(236, 72, 153, 0.3) 0%, rgba(236, 72, 153, 0.3) 35%, transparent 35%);
+//     background-size: 6px 6px, 6px 6px;
+//     background-position: 30px 30px, 31px 31px;
+//     opacity: 0.12;
+//   }
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     inset: 0;
+//     background-image: 
+//       radial-gradient(circle, #8b5cf6 2.5px, transparent 2.5px),
+//       radial-gradient(circle, #ec4899 2px, transparent 2px),
+//       radial-gradient(circle, #3b82f6 1.5px, transparent 1.5px),
+//       radial-gradient(circle, #8b5cf6 1px, transparent 1px);
+//     background-size: 100px 100px, 120px 120px, 80px 80px, 150px 150px;
+//     background-position: 0 0, 40px 60px, 70px 20px, 30px 90px;
+//     opacity: 0.18;
+//     filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+//   }
+
 
   @media (min-width: $breakpoint-lg) {
     padding: 8rem 0;
@@ -41,82 +100,63 @@
   font-size: 1.25rem;
   color: $color-gray-600;
   max-width: 42rem;
+  margin: 0 auto $spacing-2xl;
+}
+
+// Stats Section
+.stats {
+  display: grid;
+  gap: $spacing-xl;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.grid {
+.stat {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8B5CF6, #3B82F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: $spacing-sm;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: $color-gray-600;
+  font-weight: 500;
+}
+
+// Categories Grid
+.categoriesGrid {
   display: grid;
-  gap: $spacing-2xl;
+  gap: $spacing-xl;
 
   @media (min-width: $breakpoint-md) {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-.projectCard {
-  position: relative;
-  overflow: hidden;
-  border-radius: $radius-2xl;
-  background-color: $color-white;
-  box-shadow: $shadow-lg;
-  transition: all $transition-normal;
-
-  &:hover {
-    box-shadow: $shadow-2xl;
-
-    .projectImage img {
-      transform: scale(1.1);
-    }
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.projectImage {
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform $transition-slow;
-  }
-}
-
-.projectContent {
-  padding: $spacing-lg;
-}
-
-.projectCategory {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: $color-secondary;
-}
-
-.projectTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: $color-gray-900;
-  margin-top: $spacing-sm;
-  margin-bottom: $spacing-sm;
-}
-
-.projectDescription {
-  color: $color-gray-600;
-  margin-bottom: $spacing-md;
-}
-
-.projectLink {
-  display: inline-flex;
-  align-items: center;
-  color: $color-gray-900;
-  font-weight: 500;
-  transition: gap $transition-fast;
-
-  &:hover {
-    gap: $spacing-sm;
+@media (max-width: $breakpoint-sm) {
+  .stats {
+    gap: $spacing-md;
   }
 
-  svg {
-    margin-left: 0.25rem;
+  .statNumber {
+    font-size: 2rem;
+  }
+
+  .categoriesGrid {
+    gap: $spacing-lg;
   }
 }

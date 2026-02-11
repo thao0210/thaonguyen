@@ -23,6 +23,7 @@ const CategoryProjects = ({ category, projects }) => {
         <div>
           <h3 className={styles.categoryTitle}>{category.name}</h3>
           <p className={styles.categoryDescription}>{category.description}</p>
+          <p className={styles.categoryDescription}>{category.note}</p>
         </div>
       </div>
 

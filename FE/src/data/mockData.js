@@ -77,7 +77,8 @@ export const projectCategories = [
     description: 'Online stores and shopping platforms',
     icon: ShoppingCart,
     color: 'linear-gradient(135deg, #f472b6 0%, #ec4899 100%)',
-    projectCount: 4
+    projectCount: '10+',
+    note: 'Showcasing representative projects from 10+ enterprise websites delivered'
   },
   {
     id: 4,
@@ -95,7 +96,8 @@ export const projectCategories = [
     description: 'Corporate websites and business solutions',
     icon: Building2,
     color: 'linear-gradient(135deg, #312e81 0%, #1e1b4b 100%)',
-    projectCount: '100+'
+    projectCount: '80+',
+    note: 'Showcasing representative projects from 80+ enterprise websites delivered'
   },
   {
     id: 6,

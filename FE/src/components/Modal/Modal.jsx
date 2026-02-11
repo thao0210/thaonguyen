@@ -25,20 +25,33 @@ const Modal = ({ isOpen, onClose, children, title, size = 'medium' }) => {
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div 
-        className={`${styles.modalContent} ${styles[size]}`}
+        className={`${styles.modalContent} ${styles[size]} ${!title ? styles.noTitle : ''}`}
         onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside
       >
-        {/* Header */}
-        <div className={styles.modalHeader}>
-          {title && <h2 className={styles.modalTitle}>{title}</h2>}
+        {/* Header - Only show if title exists */}
+        {title && (
+          <div className={styles.modalHeader}>
+            <h2 className={styles.modalTitle}>{title}</h2>
+            <button 
+              className={styles.closeButton}
+              onClick={onClose}
+              aria-label="Close modal"
+            >
+              <X size={24} />
+            </button>
+          </div>
+        )}
+
+        {/* Close button only - Absolute positioned when no title */}
+        {!title && (
           <button 
-            className={styles.closeButton}
+            className={styles.closeButtonAbsolute}
             onClick={onClose}
             aria-label="Close modal"
           >
             <X size={24} />
           </button>
-        </div>
+        )}
 
         {/* Body */}
         <div className={styles.modalBody}>

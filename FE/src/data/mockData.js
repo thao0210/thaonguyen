@@ -78,7 +78,7 @@ export const projectCategories = [
     icon: ShoppingCart,
     color: 'linear-gradient(135deg, #f472b6 0%, #ec4899 100%)',
     projectCount: '10+',
-    note: 'Showcasing representative projects from 10+ enterprise websites delivered'
+    note: 'Showcasing representative projects from 10+ websites delivered'
   },
   {
     id: 4,
